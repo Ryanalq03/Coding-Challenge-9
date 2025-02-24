@@ -55,3 +55,32 @@ const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
 //Logs results to console
 console.log(mgr1.getDetails());
 console.log(mgr1.calculateBonus());
+
+//Task 3 Company Class
+
+//Created Company class with string and array
+class Company {
+    constructor(name) {
+        this.name = name;
+        this.employees = [];       
+    }
+
+//Method to add new employee to array
+addEmployee (employee) {
+    this.employees.push(employee)
+}
+
+//Method to log employee details 
+listEmployees() {
+    this.employees.forEach(employee => {
+        console.log(employee.getDetails());
+    });
+}
+}
+
+//Test Case
+const company = new Company("TechCorp");
+
+company.addEmployee(emp1);
+company.addEmployee(mgr1);
+company.listEmployees();
