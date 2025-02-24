@@ -84,3 +84,10 @@ const company = new Company("TechCorp");
 company.addEmployee(emp1);
 company.addEmployee(mgr1);
 company.listEmployees();
+
+//Task 4 Payroll System
+
+//Creates method to calculate total salart payroll
+calculateTotalPayroll() {
+    return this.employees.reduce((total, employee) => total + employee.calculateAnnualSalary(), 0);
+}
