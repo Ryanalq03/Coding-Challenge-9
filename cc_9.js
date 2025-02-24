@@ -91,3 +91,26 @@ company.listEmployees();
 calculateTotalPayroll() {
     return this.employees.reduce((total, employee) => total + employee.calculateAnnualSalary(), 0);
 }
+
+//Test Case
+console.log(company.calculateTotalPayroll()); 
+
+//Task 5 Promotion System
+
+//Method that promotes an employee to a manager with a team 
+promoteToManager(employee, teamSize) {
+    const index = this.employees.indexOf(employee) ;                
+    if (index !== -1) {                                             
+        this.employees[index] = new Manager (
+            employee.name,
+            employee.id,
+            employee.department, 
+            employee.salary,
+            teamSize
+        );                                               
+    }
+};
+
+//Test Case
+company.promoteToManager(emp1, 3);
+company.listEmployees();
