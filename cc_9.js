@@ -28,3 +28,30 @@ const emp1 = new Employee("Alice Johnson", 101, "Sales", 5000);
 //Logging results to console
 console.log(emp1.getDetails());
 console.log(emp1.calculateAnnualSalary());
+
+//Task 2 Manager Class
+
+//Creates a manager class and extends employee class
+class Manager extends Employee {
+    constructor(name, id, department, salary, teamSize) {
+        super(name, id, department, salary);
+        this.teamSize = teamSize;
+}
+
+//Overrides getDetails to include team size
+getDetails() {
+    return `Manager: ${this.name}, ID: ${this.id}, Department: ${this.department}, Salary: ${this.salary}, Team Size: ${this.teamSize}`;
+}
+
+//Method that calculates 10% of manager's salary
+calculateBonus() {
+    return this.calculateAnnualSalary(this.salary) * 0.1;
+}
+}
+
+//Test Case
+const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
+
+//Logs results to console
+console.log(mgr1.getDetails());
+console.log(mgr1.calculateBonus());
